@@ -13,7 +13,7 @@ const Notes = props => {
           return (
               <Card key={i} className='Notes-card' body outline color="secondary">
                 <CardBody>
-                  <Link to={`notes/${note.id}`}>
+                  <Link to={`notes/${note._id}`}>
                     <CardTitle>{note.title}</CardTitle>
                   </Link>
                   <CardSubtitle>{note.content}</CardSubtitle>

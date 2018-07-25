@@ -23,7 +23,7 @@ export const getNotes = () => {
 }
 
 export const getNote = (id) => {
-  console.log('GETTING NOTE!!!');
+  console.log('ID', id);
   return dispatch => {
     dispatch({type: FETCHNOTE})
       axios.get(`https://backend-week-app.herokuapp.com/notes/${id}`)
