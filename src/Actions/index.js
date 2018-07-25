@@ -12,7 +12,7 @@ export const UPDATED = 'UPDATED';
 export const getNotes = () => {
   return dispatch => {
     dispatch({type: FETCHING})
-      axios.get('http://localhost:5000/api/notes')
+      axios.get('mongodb://caroline:lambda1@ds141611.mlab.com:41611/backend-week/notes')
         .then(response => {
           dispatch({type: FETCHED, notes: response.data})
         })
