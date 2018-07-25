@@ -12,7 +12,7 @@ export const UPDATED = 'UPDATED';
 export const getNotes = () => {
   return dispatch => {
     dispatch({type: FETCHING})
-      axios.get('mongodb://caroline:lambda1@ds141611.mlab.com:41611/backend-week/notes')
+      axios.get('https://backend-week-app.herokuapp.com/notes')
         .then(response => {
           dispatch({type: FETCHED, notes: response.data})
         })
@@ -26,7 +26,7 @@ export const getNote = (id) => {
   console.log('GETTING NOTE!!!');
   return dispatch => {
     dispatch({type: FETCHNOTE})
-      axios.get(`http://localhost:5000/api/notes/${id}`)
+      axios.get(`https://backend-week-app.herokuapp.com/notes/${id}`)
         .then(response => {
           dispatch({type: NOTEFETCHED, note: response.data})
         })
@@ -39,7 +39,7 @@ export const getNote = (id) => {
 export const addNote = (newNote) => {
   return dispatch => {
     // dispatchEvent({type: ADDED})
-      axios.post('http://localhost:5000/api/notes', newNote)
+      axios.post('https://backend-week-app.herokuapp.com/notes/', newNote)
       .then(response => {
         dispatch({type: ADDED, notes: response.data})
       })
@@ -52,7 +52,7 @@ export const addNote = (newNote) => {
 export const deleteNote = (id) => {
   console.log('DELETE NOTE', id);
   return dispatch => {
-      axios.delete(`http://localhost:5000/api/notes/${id}`)
+      axios.delete(`https://backend-week-app.herokuapp.com/notes/${id}`)
       .then(response => {
         dispatch({type: DELETED, notes: response.data})
       })
@@ -64,7 +64,7 @@ export const deleteNote = (id) => {
 
 export const editNote = (id, noteInfo) => {
   return dispatch => {
-      axios.put(`http://localhost:5000/api/notes/${id}`, noteInfo)
+      axios.put(`https://backend-week-app.herokuapp.com/notes/${id}`, noteInfo)
       .then(response => {
         dispatch({type: UPDATED, notes: response.data})
       })
