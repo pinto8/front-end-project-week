@@ -25,6 +25,7 @@ class Edit extends Component {
             title: '',  
             content: ''
         })
+        this.props.history.push('/')
     }
 
     handleChange = (e) => {

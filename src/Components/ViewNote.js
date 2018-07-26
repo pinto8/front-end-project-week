@@ -25,8 +25,9 @@ class ViewNote extends Component {
     }
 
     handleDelete = () => {
-        this.props.deleteNote(this.props.note.id);
+        this.props.deleteNote(this.props.note._id);
         this.setState({modal: !this.props.modal});
+        this.props.history.push('/')
     }
 
     render() {
@@ -36,7 +37,7 @@ class ViewNote extends Component {
                 <div>
                     <div className='ViewNote-buttons'>
                         <Link to={{
-                            pathname: `${this.props.note.id}/edit`,
+                            pathname: `${this.props.note._id}/edit`,
                             state: this.props.note}}>
                                 <Button className='ViewNote-edit'>Edit</Button>
                         </Link>
