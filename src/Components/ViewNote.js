@@ -42,20 +42,20 @@ class ViewNote extends Component {
                         </Link>
                         <p> </p>
                         <Button className='ViewNote-delete' color="danger" onClick={this.toggleModal}>Delete</Button>
-                            <Modal isOpen={this.state.modal}
-                                    toggle={this.toggleModal}
-                                    className={this.props.className}>
-                                <ModalHeader toggle={this.toggle}>Delete {this.props.note.title}?</ModalHeader>
-                                <ModalBody>
-                                    Are you sure you want to delete {this.props.note.title}?
-                                </ModalBody>
-                                <ModalFooter>
-                                    <Link exact to="/">
-                                        <Button color="danger" onClick={this.handleDelete}>Delete</Button>
-                                    </Link>
-                                    <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
-                                </ModalFooter>
-                            </Modal>
+                        <Modal isOpen={this.state.modal}
+                                toggle={this.toggleModal}
+                                className={this.props.className}>
+                            <ModalHeader toggle={this.toggle}>Delete {this.props.note.title}?</ModalHeader>
+                            <ModalBody>
+                                Are you sure you want to delete {this.props.note.title}?
+                            </ModalBody>
+                            <ModalFooter>
+                                <Link exact to="/">
+                                    <Button color="danger" onClick={this.handleDelete}>Delete</Button>
+                                </Link>
+                                <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
                     </div>
                     <div className='ViewNote-content'>
                         <h2 className='ViewNote-title'>{this.props.note.title}</h2>

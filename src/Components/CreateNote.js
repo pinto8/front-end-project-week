@@ -20,6 +20,7 @@ class CreateNote extends Component {
             title: '',
             content: ''
         })
+        this.props.history.push('/')
     }
 
     render() {

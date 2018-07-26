@@ -26,7 +26,7 @@ export const notesReducer = (state=initialState, action) => {
     case NOTEFETCHED:
       return {...state, noteFetched: true, fetchingNote: false, note: action.note}
     case ADDED:
-      return {...state, notes: [...state.notes, ...action.notes]}
+      return {...state, notes: [...state.notes, state.notesReducer.filter(note => note._id !== action.notes._id)]}
     case DELETED:
       return {...state, notes: [...action.notes]}
     case UPDATED:
