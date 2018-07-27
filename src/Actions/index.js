@@ -64,6 +64,7 @@ export const deleteNote = (id) => {
 
 export const editNote = (id, noteInfo) => {
   return dispatch => {
+    console.log('NOTE INFO', noteInfo)
       axios.put(`https://backend-week-app.herokuapp.com/notes/${id}`, noteInfo)
       .then(response => {
         dispatch({type: UPDATED, notes: response.data})

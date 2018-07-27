@@ -26,11 +26,11 @@ export const notesReducer = (state=initialState, action) => {
     case NOTEFETCHED:
       return {...state, noteFetched: true, fetchingNote: false, note: action.note}
     case ADDED:
-      return {...state, notes: [...state.notes, state.notesReducer.filter(note => note._id !== action.notes._id)]}
+      return {...state, notes: [...state.notes, action.notes]}
     case DELETED:
-      return {...state, notes: [...action.notes]}
+      return {...state, notes: state.notes.filter(note => note._id !== action.notes._id)}
     case UPDATED:
-      return {...state, notes: [...action.notes]}
+      return {...state, notes: state.notes.map(note => note._id === action.notes.id ? action.notes : note)}
     default: 
       return state;
     }

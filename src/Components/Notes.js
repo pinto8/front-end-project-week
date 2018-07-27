@@ -14,9 +14,9 @@ class Notes extends Component {
   }
 
 
-  componentDidMount() {
-    this.setState({ notes: this.props.getNotes()})
-  }
+  // componentDidMount() {
+  //   this.setState({ notes: this.props.getNotes()})
+  // }
 
   render() {
     return(

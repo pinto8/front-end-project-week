@@ -51,9 +51,7 @@ class ViewNote extends Component {
                                 Are you sure you want to delete {this.props.note.title}?
                             </ModalBody>
                             <ModalFooter>
-                                <Link exact to="/">
-                                    <Button color="danger" onClick={this.handleDelete}>Delete</Button>
-                                </Link>
+                                <Button color="danger" onClick={this.handleDelete}>Delete</Button>
                                 <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
                             </ModalFooter>
                         </Modal>
